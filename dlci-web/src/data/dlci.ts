@@ -33,6 +33,7 @@ export const company = {
     logoLight: '/dlci/logo-light.png',
     logoOriginal: '/dlci/logo-original.png',
     hero: '/dlci/hero-project.jpg',
+    heroBackground: '/dlci/hero-bg.jpg',
     ogImage: '/dlci/hero-project.jpg',
   },
 } as const
