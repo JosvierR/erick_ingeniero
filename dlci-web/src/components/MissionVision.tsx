@@ -4,7 +4,7 @@ import { SectionHeading } from './SectionHeading'
 
 export function MissionVision() {
   return (
-    <section className="section-pad blueprint-bg-alt">
+    <section className="section-pad section-surface">
       <div className="mx-auto max-w-6xl">
         <SectionHeading eyebrow="Propósito" title="Misión, visión y valores" />
 

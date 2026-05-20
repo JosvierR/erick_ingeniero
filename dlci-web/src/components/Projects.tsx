@@ -17,7 +17,7 @@ export function Projects() {
   }, [])
 
   return (
-    <section id="proyectos" className="section-pad blueprint-bg-alt">
+    <section id="proyectos" className="section-pad bg-white">
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           eyebrow="Proyectos"

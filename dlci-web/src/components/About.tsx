@@ -4,7 +4,7 @@ import { SectionHeading } from './SectionHeading'
 
 export function About() {
   return (
-    <section id="nosotros" className="section-pad blueprint-bg-alt">
+    <section id="nosotros" className="section-pad section-surface">
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           eyebrow="Sobre nosotros"
@@ -29,9 +29,8 @@ export function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className="card-premium relative overflow-hidden p-5"
+              className="card-premium p-5"
             >
-              <div className="absolute right-0 top-0 h-16 w-16 bg-gradient-to-bl from-dlci-blue/5 to-transparent" />
               <p className="font-display text-xl font-bold text-dlci-blue">{item.year}</p>
               <p className="mt-2 text-sm leading-relaxed text-dlci-dark/80">{item.label}</p>
             </motion.div>

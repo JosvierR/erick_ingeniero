@@ -37,9 +37,30 @@ project_sources = [
 for src_name, dest_name in project_sources:
     copy_if_exists(src_name, f"projects/{dest_name}")
 
-# White logo placeholder - copy same for now (TODO: replace with white version)
-if os.path.exists(f"{dst}/logo-original.png"):
-    shutil.copy2(f"{dst}/logo-original.png", f"{dst}/logo-white.png")
+# Logo transparente + versión clara para navbar oscuro
+try:
+    from PIL import Image
+    src_logo = os.path.join(dst, "logo-original.png")
+    if os.path.exists(src_logo):
+        img = Image.open(src_logo).convert("RGBA")
+        px = img.load()
+        w, h = img.size
+        for y in range(h):
+            for x in range(w):
+                r, g, b, a = px[x, y]
+                if r < 45 and g < 45 and b < 55:
+                    px[x, y] = (0, 0, 0, 0)
+        img.save(os.path.join(dst, "logo-transparent.png"))
+        light = img.copy()
+        px2 = light.load()
+        for y in range(h):
+            for x in range(w):
+                r, g, b, a = px2[x, y]
+                if a > 0:
+                    px2[x, y] = (255, 255, 255, a)
+        light.save(os.path.join(dst, "logo-light.png"))
+except ImportError:
+    pass
 
 print("Assets copied to", dst)
 for root, _, files in os.walk(dst):

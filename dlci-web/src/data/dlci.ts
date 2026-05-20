@@ -29,8 +29,9 @@ export const company = {
   facebook: contact.facebook,
   vcardPath: '/dlci-contact.vcf',
   assets: {
-    logo: '/dlci/logo-original.png',
-    logoWhite: '/dlci/logo-white.png',
+    logo: '/dlci/logo-transparent.png',
+    logoLight: '/dlci/logo-light.png',
+    logoOriginal: '/dlci/logo-original.png',
     hero: '/dlci/hero-project.jpg',
     ogImage: '/dlci/hero-project.jpg',
   },

@@ -10,34 +10,39 @@ type Props = {
 
 export function SectionHeading({ eyebrow, title, subtitle, light, center = true }: Props) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 16 }}
+    <motion.header
+      initial={{ opacity: 0, y: 14 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.5 }}
-      className={`mb-10 max-w-3xl ${center ? 'mx-auto text-center' : ''}`}
+      viewport={{ once: true, margin: '-60px' }}
+      transition={{ duration: 0.45 }}
+      className={`mb-12 md:mb-14 ${center ? 'mx-auto max-w-3xl text-center' : 'max-w-2xl'}`}
     >
       {eyebrow && (
         <p
-          className={`font-mono-accent mb-3 text-xs font-medium uppercase tracking-[0.2em] ${
-            light ? 'text-white/70' : 'text-dlci-accent'
+          className={`section-eyebrow ${center ? 'justify-center' : ''} ${
+            light ? 'text-white/65' : 'text-dlci-dark/50'
           }`}
         >
+          <span className={`section-eyebrow-line ${light ? 'bg-white/40' : 'bg-dlci-blue/35'}`} aria-hidden />
           {eyebrow}
         </p>
       )}
       <h2
-        className={`font-display text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl ${
-          light ? 'text-white' : 'text-dlci-blue'
+        className={`font-display text-[1.65rem] font-bold leading-[1.2] tracking-tight sm:text-3xl lg:text-[2.125rem] ${
+          light ? 'text-white' : 'text-[#252b3d]'
         }`}
       >
         {title}
       </h2>
       {subtitle && (
-        <p className={`mt-4 text-base leading-relaxed sm:text-lg ${light ? 'text-white/80' : 'text-dlci-dark/80'}`}>
+        <p
+          className={`mt-4 text-[15px] leading-relaxed sm:text-base ${
+            light ? 'text-white/78' : 'text-dlci-dark/72'
+          }`}
+        >
           {subtitle}
         </p>
       )}
-    </motion.div>
+    </motion.header>
   )
 }

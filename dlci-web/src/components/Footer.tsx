@@ -1,4 +1,5 @@
 import { company, navLinks } from '../data/dlci'
+import { Logo } from './Logo'
 
 export function Footer() {
   const year = new Date().getFullYear()
@@ -8,7 +9,7 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
           <div className="max-w-sm">
-            <img src={company.assets.logo} alt="DLCI Electricidad" className="h-10 w-auto" width={120} height={40} />
+            <Logo variant="dark" className="!h-10" />
             <p className="font-mono-accent mt-3 text-xs uppercase tracking-widest text-dlci-accent">{company.tagline}</p>
             <p className="mt-4 text-sm text-dlci-dark/70">{company.address}</p>
             <p className="mt-2 text-sm text-dlci-dark/70">

@@ -52,23 +52,18 @@ function FacebookMark({ size = 18, className }: { size?: number; className?: str
 }
 
 const variantStyles: Record<ActionVariant, string> = {
-  whatsapp:
-    'action-pill action-pill--whatsapp border-[#c8e6d3] bg-gradient-to-br from-[#f4fbf6] to-white hover:border-[#25D366]/40 hover:shadow-[0_8px_24px_rgba(37,211,102,0.12)]',
-  primary:
-    'action-pill action-pill--primary border-dlci-blue/12 bg-gradient-to-br from-[#f0f2f7] to-white hover:border-dlci-blue/25 hover:shadow-[0_8px_24px_rgba(49,61,94,0.1)]',
-  neutral:
-    'action-pill border-[#E8ECF1] bg-white hover:border-dlci-blue/20 hover:shadow-[0_6px_20px_rgba(49,61,94,0.07)]',
-  social:
-    'action-pill border-[#E8ECF1] bg-white hover:border-dlci-blue/20 hover:shadow-[0_6px_20px_rgba(49,61,94,0.07)]',
-  save:
-    'action-pill border-dlci-blue/15 bg-dlci-blue/[0.04] hover:border-dlci-blue/30 hover:bg-dlci-blue/[0.07]',
+  whatsapp: 'action-pill action-pill--whatsapp border-[#E0E4EA] bg-white hover:border-[#25D366]/30',
+  primary: 'action-pill border-[#E0E4EA] bg-white hover:border-dlci-blue/25',
+  neutral: 'action-pill border-[#E0E4EA] bg-white hover:border-dlci-blue/20',
+  social: 'action-pill border-[#E0E4EA] bg-white hover:border-dlci-blue/20',
+  save: 'action-pill border-dlci-blue/20 bg-[#f4f6f9] hover:border-dlci-blue/35',
 }
 
 const iconStyles: Record<ActionVariant, string> = {
-  whatsapp: 'bg-[#25D366]/12 text-[#1a8f47]',
-  primary: 'bg-dlci-blue/10 text-dlci-blue',
-  neutral: 'bg-dlci-bg text-dlci-blue',
-  social: 'bg-dlci-bg text-dlci-dark/70',
+  whatsapp: 'bg-[#e8f7ed] text-[#1a8f47]',
+  primary: 'bg-[#eef1f6] text-dlci-blue',
+  neutral: 'bg-[#eef1f6] text-dlci-blue',
+  social: 'bg-[#eef1f6] text-dlci-dark/65',
   save: 'bg-dlci-blue text-white',
 }
 
@@ -76,13 +71,12 @@ export function QuickActions() {
   return (
     <section
       id="acciones"
-      className="sticky top-[52px] z-40 border-b border-[#E8ECF1]/90 bg-white/90 shadow-[0_4px_24px_rgba(49,61,94,0.04)] backdrop-blur-xl"
+      className="sticky top-[52px] z-40 border-b border-[#E8ECF1] bg-white/98 backdrop-blur-md"
     >
       <div className="mx-auto max-w-6xl px-4 py-4 sm:px-6 lg:px-8">
-        <div className="mb-3 flex items-center justify-between gap-3">
-          <p className="font-display text-sm font-semibold text-dlci-blue">Contacto inmediato</p>
-          <p className="hidden text-xs text-dlci-dark/45 sm:block">Desliza para ver más →</p>
-        </div>
+        <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-dlci-dark/45">
+          Contacto inmediato
+        </p>
 
         <motion.div
           initial={{ opacity: 0, y: 6 }}

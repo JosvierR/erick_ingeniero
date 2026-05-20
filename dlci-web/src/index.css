@@ -3,9 +3,10 @@
 @theme {
   --color-dlci-blue: #313d5e;
   --color-dlci-dark: #373135;
-  --color-dlci-bg: #f5f7fa;
+  --color-dlci-bg: #f4f6f9;
   --color-dlci-accent: #4a6fa5;
-  --font-display: 'Space Grotesk', 'Montserrat', system-ui, sans-serif;
+  --color-dlci-ink: #252b3d;
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 }
@@ -20,6 +21,7 @@ body {
   color: var(--color-dlci-dark);
   background: #fff;
   -webkit-font-smoothing: antialiased;
+  font-feature-settings: 'kern' 1, 'liga' 1;
 }
 
 .font-display {
@@ -28,51 +30,50 @@ body {
 
 .font-mono-accent {
   font-family: var(--font-mono);
+  letter-spacing: 0.08em;
 }
 
-.blueprint-bg {
-  background-color: #fff;
-  background-image:
-    linear-gradient(rgba(49, 61, 94, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(49, 61, 94, 0.04) 1px, transparent 1px);
-  background-size: 32px 32px;
-}
-
-.blueprint-bg-alt {
-  background-color: var(--color-dlci-bg);
-  background-image:
-    linear-gradient(rgba(49, 61, 94, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(49, 61, 94, 0.035) 1px, transparent 1px);
-  background-size: 28px 28px;
-}
-
+/* Secciones — limpio, sin grid genérico */
 .section-pad {
-  @apply px-4 py-16 sm:px-6 lg:px-8 lg:py-24;
+  @apply px-4 py-20 sm:px-6 lg:px-8 lg:py-28;
+}
+
+.section-surface {
+  @apply bg-[#f4f6f9];
+}
+
+.section-eyebrow {
+  @apply mb-4 flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.22em];
+}
+
+.section-eyebrow-line {
+  @apply h-px w-8 shrink-0;
 }
 
 .card-premium {
-  @apply rounded-[20px] border border-[#E5E7EB] bg-white shadow-[0_8px_30px_rgba(49,61,94,0.06)];
+  @apply rounded-2xl border border-[#E8ECF1] bg-white;
+  box-shadow: 0 1px 2px rgba(37, 43, 61, 0.04), 0 8px 32px rgba(37, 43, 61, 0.05);
 }
 
 .btn-primary {
-  @apply inline-flex items-center justify-center gap-2 rounded-2xl bg-[#313D5E] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#273149] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#313D5E];
+  @apply inline-flex items-center justify-center gap-2 rounded-xl bg-dlci-blue px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#273149] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dlci-blue;
 }
 
 .btn-secondary {
-  @apply inline-flex items-center justify-center gap-2 rounded-2xl border border-[#E5E7EB] bg-white px-5 py-3 text-sm font-semibold text-[#313D5E] transition hover:border-[#313D5E]/30 hover:bg-[#F5F7FA] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#313D5E];
+  @apply inline-flex items-center justify-center gap-2 rounded-xl border border-[#E0E4EA] bg-white px-5 py-3 text-sm font-semibold text-dlci-blue transition hover:border-dlci-blue/25 hover:bg-[#f8f9fb] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dlci-blue;
 }
 
 .btn-ghost-light {
-  @apply inline-flex items-center justify-center gap-2 rounded-2xl border border-white/20 bg-white/10 px-5 py-3 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-white/20;
+  @apply inline-flex items-center justify-center gap-2 rounded-xl border border-white/22 bg-white/[0.08] px-5 py-3 text-sm font-semibold text-white backdrop-blur-sm transition hover:border-white/35 hover:bg-white/[0.12];
 }
 
-/* Acciones rápidas NFC — pills editoriales */
+/* Acciones rápidas */
 .action-pill {
-  @apply flex min-w-[8.5rem] shrink-0 items-center gap-3 rounded-[18px] border px-3.5 py-3 transition-all duration-300 sm:min-w-0;
+  @apply flex min-w-[8.5rem] shrink-0 items-center gap-3 rounded-2xl border px-3.5 py-3 transition-all duration-200 sm:min-w-0;
 }
 
 .action-pill-icon {
-  @apply flex h-11 w-11 shrink-0 items-center justify-center rounded-[14px];
+  @apply flex h-10 w-10 shrink-0 items-center justify-center rounded-xl;
 }
 
 .action-pill-text {
@@ -80,96 +81,191 @@ body {
 }
 
 .action-pill-label {
-  @apply text-[13px] font-semibold tracking-tight text-dlci-dark;
+  @apply text-[13px] font-semibold tracking-tight text-dlci-ink;
 }
 
 .action-pill-sublabel {
   @apply mt-1 text-[10px] font-medium text-dlci-dark/45;
 }
 
-.action-pill--whatsapp .action-pill-label {
-  @apply text-[#1a5c36];
+.action-pill--whatsapp {
+  @apply border-[#d4edda] bg-[#f6fcf8] hover:border-[#25D366]/35 hover:shadow-[0_6px_20px_rgba(37,211,102,0.1)];
 }
 
-/* Tarjetas de proyecto */
+.action-pill--whatsapp .action-pill-label {
+  @apply text-[#1a6b3c];
+}
+
+/* Proyectos */
 .project-card {
-  @apply overflow-hidden rounded-[22px] border border-[#E8ECF1] bg-white shadow-[0_4px_24px_rgba(49,61,94,0.05)] transition-all duration-400 ease-out;
-  @apply hover:-translate-y-1 hover:border-dlci-blue/15 hover:shadow-[0_16px_48px_rgba(49,61,94,0.1)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-dlci-blue;
+  @apply overflow-hidden rounded-2xl border border-[#E8ECF1] bg-white transition-all duration-300;
+  box-shadow: 0 1px 2px rgba(37, 43, 61, 0.04), 0 6px 24px rgba(37, 43, 61, 0.05);
+}
+
+.project-card:hover {
+  @apply -translate-y-0.5 border-dlci-blue/12;
+  box-shadow: 0 12px 40px rgba(37, 43, 61, 0.09);
+}
+
+.project-card:focus-visible {
+  @apply outline outline-2 outline-offset-2 outline-dlci-blue;
 }
 
 .project-card-cta {
-  @apply mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-dlci-blue;
+  @apply mt-5 inline-flex items-center gap-1.5 text-[13px] font-semibold text-dlci-blue;
 }
 
 .service-chip {
-  @apply rounded-full border border-dlci-blue/10 bg-dlci-blue/[0.05] px-2.5 py-1 text-[10px] font-semibold text-dlci-blue/90;
+  @apply rounded-md bg-[#eef1f6] px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-dlci-blue/85;
 }
 
 .service-chip--muted {
-  @apply border-[#E8ECF1] bg-dlci-bg text-dlci-dark/50;
+  @apply bg-[#f0f2f6] text-dlci-dark/45;
 }
 
 .project-modal-panel {
   -webkit-overflow-scrolling: touch;
 }
 
-/* Clientes y proveedores */
+/* Partners */
 .partner-panel {
-  @apply rounded-[24px] border border-[#E8ECF1] bg-gradient-to-b from-white to-dlci-bg/40 p-6 sm:p-7;
-  box-shadow: 0 4px 32px rgba(49, 61, 94, 0.05);
+  @apply rounded-2xl border border-[#E8ECF1] bg-white p-6 sm:p-7;
+  box-shadow: 0 1px 2px rgba(37, 43, 61, 0.04), 0 8px 28px rgba(37, 43, 61, 0.04);
 }
 
 .partner-panel-header {
-  @apply flex items-start gap-4;
+  @apply flex items-start gap-4 border-b border-[#EEF1F5] pb-5;
 }
 
 .partner-panel-icon {
-  @apply flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl;
-}
-
-.partner-panel-icon--client {
-  @apply bg-dlci-blue/10 text-dlci-blue;
-}
-
-.partner-panel-icon--provider {
-  @apply bg-dlci-accent/15 text-dlci-accent;
+  @apply flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#eef1f6] text-dlci-blue;
 }
 
 .partner-count {
-  @apply ml-auto rounded-full bg-dlci-blue/8 px-3 py-1 font-display text-sm font-bold text-dlci-blue;
+  @apply ml-auto rounded-full bg-[#eef1f6] px-2.5 py-0.5 font-display text-xs font-bold text-dlci-blue;
 }
 
 .partner-card {
-  @apply flex items-center gap-3 rounded-[16px] border border-transparent bg-white px-3.5 py-3 transition-all duration-300;
-  @apply hover:border-dlci-blue/12 hover:shadow-[0_8px_24px_rgba(49,61,94,0.08)];
+  @apply flex items-center gap-3 rounded-xl border border-[#EEF1F5] bg-[#fafbfc] px-3.5 py-3 transition hover:border-dlci-blue/15 hover:bg-white;
 }
 
 .partner-monogram {
-  @apply flex h-11 w-11 shrink-0 items-center justify-center rounded-[14px] font-display text-xs font-bold text-dlci-blue;
+  @apply flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white font-display text-[11px] font-bold text-dlci-blue ring-1 ring-[#E8ECF1];
 }
 
 /* Contacto */
 .contact-card {
-  @apply rounded-[22px] border border-white/12 bg-white/[0.06] p-5 sm:p-6;
+  @apply rounded-2xl border border-white/12 bg-white/[0.06] p-5 sm:p-6;
 }
 
 .contact-card--highlight {
-  @apply border-white/20 bg-white/[0.1];
+  @apply border-white/18 bg-white/[0.09];
 }
 
 .contact-card-link {
-  @apply flex items-center gap-3 rounded-xl p-2 transition hover:bg-white/10;
+  @apply flex items-center gap-3 rounded-lg p-2 transition hover:bg-white/8;
 }
 
 .contact-form {
-  @apply rounded-[24px] border border-white/15 bg-white/[0.08] p-6 backdrop-blur-md sm:p-8;
+  @apply rounded-2xl border border-white/12 bg-white/[0.06] p-6 sm:p-8;
 }
 
 .contact-input {
-  @apply w-full rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/40;
-  @apply transition focus:border-white/45 focus:bg-white/[0.14] focus:outline-none;
+  @apply w-full rounded-xl border border-white/18 bg-white/[0.08] px-4 py-3 text-sm text-white placeholder:text-white/38;
+  @apply transition focus:border-white/40 focus:bg-white/[0.12] focus:outline-none;
 }
 
 .contact-input option {
   @apply bg-dlci-blue text-white;
+}
+
+/* Hero */
+.hero-section {
+  @apply text-white;
+}
+
+.hero-grid {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: linear-gradient(to bottom, black 0%, transparent 85%);
+}
+
+.hero-badge {
+  @apply inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.07] px-3.5 py-1.5 text-[11px] font-medium tracking-wide text-white/90;
+}
+
+.hero-accent-line {
+  @apply h-px w-12 bg-white/50;
+}
+
+.hero-stat-pill {
+  @apply inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.06] px-3 py-1 text-xs;
+}
+
+.hero-stat-pill strong {
+  @apply font-display text-sm font-bold text-white;
+}
+
+.hero-cta-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl bg-[#22b85c] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#1fa355];
+}
+
+.hero-cta-secondary {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl border border-white/22 bg-transparent px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/8;
+}
+
+.hero-text-link {
+  @apply inline-flex items-center gap-1 text-[13px] font-medium text-white/85 transition hover:text-white;
+}
+
+.hero-visual-frame {
+  @apply overflow-hidden rounded-2xl ring-1 ring-white/15;
+  box-shadow: 0 24px 56px rgba(0, 0, 0, 0.35);
+}
+
+.hero-scroll-cue {
+  @apply absolute bottom-6 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-2 text-white/50 transition hover:text-white/80;
+}
+
+@keyframes hero-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(4px);
+  }
+}
+
+.animate-hero-bounce {
+  animation: hero-bounce 2.2s ease-in-out infinite;
+}
+
+/* Stat cards editorial */
+.stat-card {
+  @apply flex flex-col items-center justify-center rounded-2xl border border-[#E8ECF1] bg-white px-4 py-8 text-center;
+  box-shadow: 0 1px 2px rgba(37, 43, 61, 0.04);
+}
+
+.stat-card strong {
+  @apply font-display text-3xl font-bold tracking-tight text-dlci-blue sm:text-4xl;
+}
+
+.stat-card span {
+  @apply mt-2 max-w-[9rem] text-xs font-medium leading-snug text-dlci-dark/55;
+}
+
+/* Service card */
+.service-card {
+  @apply flex h-full flex-col rounded-2xl border border-[#E8ECF1] bg-white p-6;
+  box-shadow: 0 1px 2px rgba(37, 43, 61, 0.04);
+}
+
+.service-card:hover {
+  box-shadow: 0 8px 28px rgba(37, 43, 61, 0.07);
+}
+
+.service-card-icon {
+  @apply mb-5 flex h-10 w-10 items-center justify-center rounded-xl bg-[#eef1f6] text-dlci-blue;
 }

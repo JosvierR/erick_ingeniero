@@ -22,7 +22,7 @@ const iconMap: Record<string, LucideIcon> = {
 
 export function Services() {
   return (
-    <section id="servicios" className="section-pad blueprint-bg-alt">
+    <section id="servicios" className="section-pad section-surface">
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           eyebrow="Servicios"
@@ -40,17 +40,16 @@ export function Services() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-40px' }}
                 transition={{ delay: (i % 3) * 0.08 }}
-                className="card-premium flex h-full flex-col p-6"
+                className="service-card"
               >
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-dlci-blue/10 text-dlci-blue">
-                  <Icon size={22} aria-hidden />
+                <div className="service-card-icon">
+                  <Icon size={20} aria-hidden />
                 </div>
-                <h3 className="font-display text-lg font-bold text-dlci-blue">{service.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-dlci-dark/75">{service.description}</p>
-                <ul className="mt-4 flex flex-1 flex-col gap-1.5 border-t border-[#E5E7EB] pt-4">
+                <h3 className="font-display text-[17px] font-bold text-dlci-ink">{service.title}</h3>
+                <p className="mt-2 text-[14px] leading-relaxed text-dlci-dark/68">{service.description}</p>
+                <ul className="mt-5 flex flex-1 flex-col gap-2 border-t border-[#EEF1F5] pt-5">
                   {service.scope.map((item) => (
-                    <li key={item} className="flex gap-2 text-sm text-dlci-dark/80">
-                      <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-dlci-accent" aria-hidden />
+                    <li key={item} className="text-[13px] leading-snug text-dlci-dark/72">
                       {item}
                     </li>
                   ))}
