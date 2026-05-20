@@ -1,0 +1,175 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-dlci-blue: #313d5e;
+  --color-dlci-dark: #373135;
+  --color-dlci-bg: #f5f7fa;
+  --color-dlci-accent: #4a6fa5;
+  --font-display: 'Space Grotesk', 'Montserrat', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-dlci-dark);
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono-accent {
+  font-family: var(--font-mono);
+}
+
+.blueprint-bg {
+  background-color: #fff;
+  background-image:
+    linear-gradient(rgba(49, 61, 94, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(49, 61, 94, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.blueprint-bg-alt {
+  background-color: var(--color-dlci-bg);
+  background-image:
+    linear-gradient(rgba(49, 61, 94, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(49, 61, 94, 0.035) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.section-pad {
+  @apply px-4 py-16 sm:px-6 lg:px-8 lg:py-24;
+}
+
+.card-premium {
+  @apply rounded-[20px] border border-[#E5E7EB] bg-white shadow-[0_8px_30px_rgba(49,61,94,0.06)];
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-2xl bg-[#313D5E] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#273149] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#313D5E];
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center gap-2 rounded-2xl border border-[#E5E7EB] bg-white px-5 py-3 text-sm font-semibold text-[#313D5E] transition hover:border-[#313D5E]/30 hover:bg-[#F5F7FA] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#313D5E];
+}
+
+.btn-ghost-light {
+  @apply inline-flex items-center justify-center gap-2 rounded-2xl border border-white/20 bg-white/10 px-5 py-3 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-white/20;
+}
+
+/* Acciones rápidas NFC — pills editoriales */
+.action-pill {
+  @apply flex min-w-[8.5rem] shrink-0 items-center gap-3 rounded-[18px] border px-3.5 py-3 transition-all duration-300 sm:min-w-0;
+}
+
+.action-pill-icon {
+  @apply flex h-11 w-11 shrink-0 items-center justify-center rounded-[14px];
+}
+
+.action-pill-text {
+  @apply flex min-w-0 flex-col items-start leading-none;
+}
+
+.action-pill-label {
+  @apply text-[13px] font-semibold tracking-tight text-dlci-dark;
+}
+
+.action-pill-sublabel {
+  @apply mt-1 text-[10px] font-medium text-dlci-dark/45;
+}
+
+.action-pill--whatsapp .action-pill-label {
+  @apply text-[#1a5c36];
+}
+
+/* Tarjetas de proyecto */
+.project-card {
+  @apply overflow-hidden rounded-[22px] border border-[#E8ECF1] bg-white shadow-[0_4px_24px_rgba(49,61,94,0.05)] transition-all duration-400 ease-out;
+  @apply hover:-translate-y-1 hover:border-dlci-blue/15 hover:shadow-[0_16px_48px_rgba(49,61,94,0.1)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-dlci-blue;
+}
+
+.project-card-cta {
+  @apply mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-dlci-blue;
+}
+
+.service-chip {
+  @apply rounded-full border border-dlci-blue/10 bg-dlci-blue/[0.05] px-2.5 py-1 text-[10px] font-semibold text-dlci-blue/90;
+}
+
+.service-chip--muted {
+  @apply border-[#E8ECF1] bg-dlci-bg text-dlci-dark/50;
+}
+
+.project-modal-panel {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Clientes y proveedores */
+.partner-panel {
+  @apply rounded-[24px] border border-[#E8ECF1] bg-gradient-to-b from-white to-dlci-bg/40 p-6 sm:p-7;
+  box-shadow: 0 4px 32px rgba(49, 61, 94, 0.05);
+}
+
+.partner-panel-header {
+  @apply flex items-start gap-4;
+}
+
+.partner-panel-icon {
+  @apply flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl;
+}
+
+.partner-panel-icon--client {
+  @apply bg-dlci-blue/10 text-dlci-blue;
+}
+
+.partner-panel-icon--provider {
+  @apply bg-dlci-accent/15 text-dlci-accent;
+}
+
+.partner-count {
+  @apply ml-auto rounded-full bg-dlci-blue/8 px-3 py-1 font-display text-sm font-bold text-dlci-blue;
+}
+
+.partner-card {
+  @apply flex items-center gap-3 rounded-[16px] border border-transparent bg-white px-3.5 py-3 transition-all duration-300;
+  @apply hover:border-dlci-blue/12 hover:shadow-[0_8px_24px_rgba(49,61,94,0.08)];
+}
+
+.partner-monogram {
+  @apply flex h-11 w-11 shrink-0 items-center justify-center rounded-[14px] font-display text-xs font-bold text-dlci-blue;
+}
+
+/* Contacto */
+.contact-card {
+  @apply rounded-[22px] border border-white/12 bg-white/[0.06] p-5 sm:p-6;
+}
+
+.contact-card--highlight {
+  @apply border-white/20 bg-white/[0.1];
+}
+
+.contact-card-link {
+  @apply flex items-center gap-3 rounded-xl p-2 transition hover:bg-white/10;
+}
+
+.contact-form {
+  @apply rounded-[24px] border border-white/15 bg-white/[0.08] p-6 backdrop-blur-md sm:p-8;
+}
+
+.contact-input {
+  @apply w-full rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/40;
+  @apply transition focus:border-white/45 focus:bg-white/[0.14] focus:outline-none;
+}
+
+.contact-input option {
+  @apply bg-dlci-blue text-white;
+}

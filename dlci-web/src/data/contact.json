@@ -1,0 +1,29 @@
+{
+  "office": {
+    "label": "Oficina",
+    "phone": "+18097243281",
+    "phoneDisplay": "(809) 724-3281",
+    "email": "Info@dlci.com.do"
+  },
+  "representative": {
+    "name": "Ing. Máximo De La Cruz",
+    "title": "Ingeniería eléctrica",
+    "phone": "+18098414554",
+    "phoneDisplay": "(809) 841-4554",
+    "email": "Maximo@dlci.com.do"
+  },
+  "website": "https://dlci.com.do",
+  "address": "Santiago de los Caballeros, República Dominicana",
+  "streetAddress": "",
+  "postalCode": "",
+  "mapsUrl": "https://www.google.com/maps/search/?api=1&query=DLCI+Electricidad+Santiago+de+los+Caballeros",
+  "whatsappMessage": "Hola DLCI Electricidad, me interesa recibir información sobre sus servicios eléctricos.",
+  "instagram": {
+    "handle": "@DLCI.ELECTRICIDAD",
+    "url": "https://www.instagram.com/DLCI.ELECTRICIDAD"
+  },
+  "facebook": {
+    "name": "DLCI ELECTRICIDAD SRL",
+    "url": "https://www.facebook.com/DLCIELECTRICIDADSRL"
+  }
+}

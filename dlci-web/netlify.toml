@@ -1,0 +1,34 @@
+# Despliegue Netlify — DLCI Electricidad NFC
+# Si conectas el repo completo (erick_ingeniero), usa el netlify.toml de la raíz del repo.
+# Si conectas solo la carpeta dlci-web, este archivo es suficiente.
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+  NPM_FLAGS = "--legacy-peer-deps=false"
+
+# Cabeceras: caché para assets estáticos
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/dlci/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/*.vcf"
+  [headers.values]
+    Content-Type = "text/vcard; charset=utf-8"
+    Content-Disposition = "attachment; filename=dlci-contact.vcf"
+
+# SPA: una sola página con anclas (#servicios, etc.)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

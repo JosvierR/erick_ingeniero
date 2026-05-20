@@ -1,0 +1,29 @@
+# Repo raíz: la app vive en dlci-web/
+[build]
+  base = "dlci-web"
+  command = "npm run build"
+  publish = "dlci-web/dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/dlci/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/*.vcf"
+  [headers.values]
+    Content-Type = "text/vcard; charset=utf-8"
+    Content-Disposition = "attachment; filename=dlci-contact.vcf"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

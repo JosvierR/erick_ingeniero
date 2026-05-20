@@ -1,0 +1,11 @@
+# Extracción temporal de PDFs (assets ya están en dlci-web/public)
+extracted/
+
+# Dependencias y build
+dlci-web/node_modules/
+dlci-web/dist/
+
+# Entorno local
+.env
+.env.*
+!.env.example
