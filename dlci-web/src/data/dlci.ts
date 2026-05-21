@@ -151,6 +151,18 @@ export const processSteps = [
 
 export const projects = [
   {
+    id: 'biventi-iii',
+    name: 'Biventi III',
+    location: 'Santiago de los Caballeros, Villa Olga',
+    years: '2021–2023',
+    details: '10 niveles · Apartamentos 140 m² – 175 m²',
+    description: 'Complejo residencial con infraestructura eléctrica de alta densidad.',
+    scope:
+      'Diseño y ejecución de sistemas en baja tensión para edificio de 10 niveles, incluyendo canalizaciones, protecciones, iluminación y coordinación con otras disciplinas en obra.',
+    services: ['Diseño eléctrico', 'Ejecución', 'Supervisión', 'Instalaciones eléctricas'],
+    image: '/dlci/projects/torre-soria.jpg',
+  },
+  {
     id: 'torre-soria',
     name: 'Torre Soria',
     location: 'Santiago de los Caballeros, Villa Olga',
@@ -161,22 +173,10 @@ export const projects = [
     scope:
       'Ingeniería eléctrica integral para torre de 14 niveles: dimensionamiento de cargas, tableros por zona, iluminación de áreas comunes y apartamentos, más supervisión en obra hasta la puesta en servicio.',
     services: ['Diseño eléctrico', 'Ejecución', 'Supervisión', 'Instalaciones eléctricas'],
-    image: '/dlci/projects/torre-soria.jpg',
-  },
-  {
-    id: 'biventi-iii',
-    name: 'Biventi III',
-    location: 'Santiago de los Caballeros, Villa Olga',
-    years: '2021–2023',
-    details: '10 niveles · Apartamentos 140 m² – 175 m²',
-    description: 'Complejo residencial con infraestructura eléctrica de alta densidad.',
-    scope:
-      'Diseño y ejecución de sistemas en baja tensión para edificio de 10 niveles, incluyendo canalizaciones, protecciones, iluminación y coordinación con otras disciplinas en obra.',
-    services: ['Diseño eléctrico', 'Ejecución', 'Supervisión', 'Instalaciones eléctricas'],
     image: '/dlci/projects/biventi-iii.jpg',
   },
   {
-    id: 'residencial-sorrento',
+    id: 'torre-bonsai',
     name: 'Residencial Sorrento',
     location: 'Santiago de los Caballeros, Villa Olga',
     years: '2019–2022',
@@ -185,10 +185,10 @@ export const projects = [
     scope:
       'Dos edificios de 6 niveles con 24 unidades: planificación eléctrica unificada, aprobaciones y montaje de instalaciones con control de calidad en ambas torres.',
     services: ['Diseño eléctrico', 'Ejecución', 'Supervisión', 'Instalaciones eléctricas'],
-    image: '/dlci/projects/residencial-sorrento.jpg',
+    image: '/dlci/projects/torre-bonsai.jpg',
   },
   {
-    id: 'torre-bonsai',
+    id: 'torre-murcia',
     name: 'Torre Bonsai',
     location: 'Santiago de los Caballeros, Cerros de Gurabo III',
     years: '2019–2021',
@@ -197,10 +197,10 @@ export const projects = [
     scope:
       'Torre de 11 niveles con un apartamento por piso: diseño detallado por nivel, tableros individuales y supervisión técnica durante la ejecución.',
     services: ['Diseño eléctrico', 'Ejecución', 'Supervisión', 'Instalaciones eléctricas'],
-    image: '/dlci/projects/torre-bonsai.jpg',
+    image: '/dlci/projects/torre-murcia.jpg',
   },
   {
-    id: 'torre-murcia',
+    id: 'residencial-dj',
     name: 'Torre Murcia',
     location: 'Santiago de los Caballeros, La Esmeralda',
     years: '2020–2021',
@@ -208,18 +208,6 @@ export const projects = [
     description: 'Proyecto vertical con optimización de cargas y tableros por zona.',
     scope:
       'Edificio de 10 niveles en La Esmeralda: optimización de cargas, distribución por zonas y entrega de instalaciones certificadas con documentación de cierre.',
-    services: ['Diseño eléctrico', 'Ejecución', 'Supervisión', 'Instalaciones eléctricas'],
-    image: '/dlci/projects/torre-murcia.jpg',
-  },
-  {
-    id: 'residencial-dj',
-    name: 'Residencial DJ',
-    location: 'Santiago de los Caballeros',
-    years: '',
-    details: 'Proyecto residencial',
-    description: 'Desarrollo residencial con soluciones eléctricas integrales DLCI.',
-    scope:
-      'Acompañamiento eléctrico completo en desarrollo residencial: desde el diseño y tramitación hasta la ejecución y verificación final de instalaciones.',
     services: ['Diseño eléctrico', 'Ejecución', 'Supervisión', 'Instalaciones eléctricas'],
     image: '/dlci/projects/residencial-dj.jpg',
   },

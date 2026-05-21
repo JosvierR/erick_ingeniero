@@ -23,7 +23,7 @@ function PartnerList({ items, title, description, icon: Icon, variant }: Partner
           <h3 className="font-display text-lg font-bold text-dlci-blue">{title}</h3>
           <p className="mt-0.5 text-sm text-dlci-dark/55">{description}</p>
         </div>
-        <span className="partner-count">{items.length}</span>
+        <span className="partner-count">Destacados</span>
       </div>
 
       <ul className="mt-5 grid gap-2.5 sm:grid-cols-2">
@@ -73,14 +73,14 @@ export function Clients() {
           <div className="flex items-center gap-2 text-sm text-dlci-dark/60">
             <Handshake size={18} className="text-dlci-accent" aria-hidden />
             <span>
-              <strong className="font-semibold text-dlci-blue">{clients.length}</strong> clientes
+              <strong className="font-semibold text-dlci-blue">Clientes</strong> destacados
             </span>
           </div>
           <div className="hidden h-4 w-px bg-[#E8ECF1] sm:block" aria-hidden />
           <div className="flex items-center gap-2 text-sm text-dlci-dark/60">
             <Package size={18} className="text-dlci-accent" aria-hidden />
             <span>
-              <strong className="font-semibold text-dlci-blue">{providers.length}</strong> proveedores
+              <strong className="font-semibold text-dlci-blue">Proveedores</strong> destacados
             </span>
           </div>
         </div>
