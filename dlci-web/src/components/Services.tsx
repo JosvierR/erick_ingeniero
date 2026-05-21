@@ -42,9 +42,14 @@ export function Services() {
                 transition={{ delay: (i % 3) * 0.08 }}
                 className="service-card"
               >
-                <div className="service-card-icon">
-                  <Icon size={20} aria-hidden />
-                </div>
+                {'image' in service && service.image && (
+                  <div className="service-card-media">
+                    <img src={service.image} alt="" loading="lazy" decoding="async" />
+                    <span className="service-card-media-icon" aria-hidden>
+                      <Icon size={18} />
+                    </span>
+                  </div>
+                )}
                 <h3 className="font-display text-[17px] font-bold text-dlci-ink">{service.title}</h3>
                 <p className="mt-2 text-[14px] leading-relaxed text-dlci-dark/68">{service.description}</p>
                 <ul className="mt-5 flex flex-1 flex-col gap-2 border-t border-[#EEF1F5] pt-5">

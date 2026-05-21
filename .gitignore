@@ -1,5 +1,6 @@
 # Extracción temporal de PDFs (assets ya están en dlci-web/public)
 extracted/
+*.pdf
 
 # Dependencias y build
 dlci-web/node_modules/

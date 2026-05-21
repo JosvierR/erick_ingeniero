@@ -26,13 +26,14 @@ for name in [
         break
 
 # Project images from portafolio pages 4-9 (first large jpeg each page)
+# Orden portafolio (páginas 4–9) según propuesta de diseño
 project_sources = [
-    ("Portafolio_DLCI_Electrici_p4_img0.jpeg", "torre-soria.jpg"),
-    ("Portafolio_DLCI_Electrici_p5_img0.jpeg", "biventi-iii.jpg"),
-    ("Portafolio_DLCI_Electrici_p6_img0.jpeg", "residencial-sorrento.jpg"),
-    ("Portafolio_DLCI_Electrici_p7_img0.jpeg", "torre-bonsai.jpg"),
-    ("Portafolio_DLCI_Electrici_p8_img0.jpeg", "torre-murcia.jpg"),
-    ("Portafolio_DLCI_Electrici_p9_img0.jpeg", "residencial-dj.jpg"),
+    ("Portafolio_DLCI_Electrici_p5_img0.jpeg", "torre-soria.jpg"),
+    ("Portafolio_DLCI_Electrici_p4_img0.jpeg", "torre-biventi-iii.jpg"),
+    ("Portafolio_DLCI_Electrici_p7_img0.jpeg", "residencial-sorrento.jpg"),
+    ("Portafolio_DLCI_Electrici_p8_img0.jpeg", "torre-bonsai.jpg"),
+    ("Portafolio_DLCI_Electrici_p9_img0.jpeg", "torre-murcia.jpg"),
+    ("Portafolio_DLCI_Electrici_p6_img0.jpeg", "residencial-dj.jpg"),
 ]
 for src_name, dest_name in project_sources:
     copy_if_exists(src_name, f"projects/{dest_name}")

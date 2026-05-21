@@ -11,12 +11,11 @@ FN:DLCI Electricidad
 ORG:DLCI Electricidad SRL
 TITLE:Ingeniería eléctrica
 TEL;TYPE=WORK,VOICE:${contact.office.phone}
-TEL;TYPE=CELL,VOICE:${contact.representative.phone}
 EMAIL;TYPE=WORK:${contact.office.email}
 EMAIL;TYPE=INTERNET:${contact.representative.email}
 URL:${contact.website}
 ADR:;;${contact.streetAddress || contact.address};;;;
-NOTE:${contact.representative.name} · ${contact.representative.phoneDisplay}
+NOTE:${contact.representative.name} · WhatsApp ${contact.office.phoneDisplay}
 X-SOCIALPROFILE;type=instagram:${contact.instagram.url}
 X-SOCIALPROFILE;type=facebook:${contact.facebook.url}
 END:VCARD

@@ -8,7 +8,7 @@ const schema = {
   description: company.subtitle,
   slogan: company.tagline,
   url: company.website,
-  telephone: [company.office.phone, company.representative.phone],
+  telephone: company.office.phone,
   email: [company.office.email, company.representative.email],
   image: absoluteAsset(company.assets.ogImage),
   address: {

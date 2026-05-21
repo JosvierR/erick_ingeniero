@@ -6,10 +6,10 @@
 
 | | Oficina | Ing. Máximo De La Cruz |
 |---|---------|------------------------|
-| Teléfono | (809) 724-3281 | (809) 841-4554 |
+| Teléfono | (809) 724-3281 | — |
 | Correo | Info@dlci.com.do | Maximo@dlci.com.do |
 
-- **WhatsApp** → celular del ingeniero
+- **WhatsApp** → oficina (809) 724-3281
 - **Llamar (barra rápida)** → oficina
 - **vCard** → ambos teléfonos y correos
 

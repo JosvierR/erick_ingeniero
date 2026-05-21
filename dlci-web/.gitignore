@@ -9,6 +9,8 @@ lerna-debug.log*
 
 node_modules
 dist
+public/dlci/proposal-extract
+public/dlci/info-extract
 dist-ssr
 *.local
 

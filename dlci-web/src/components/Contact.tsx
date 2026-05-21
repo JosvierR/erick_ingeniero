@@ -9,16 +9,9 @@ import {
   MessageCircle,
   Phone,
   Send,
-  User,
 } from 'lucide-react'
 import { company, projectTypes } from '../data/dlci'
-import {
-  mailtoOfficeUrl,
-  mailtoRepresentativeUrl,
-  telMobileUrl,
-  telOfficeUrl,
-  whatsappUrl,
-} from '../lib/links'
+import { mailtoOfficeUrl, mailtoRepresentativeUrl, telOfficeUrl, whatsappUrl } from '../lib/links'
 import { SectionHeading } from './SectionHeading'
 
 const NETLIFY_FORM_NAME = 'dlci-contacto'
@@ -98,17 +91,40 @@ export function Contact() {
           subtitle="DLCI Electricidad puede acompañarte desde el diseño y aprobación hasta la ejecución, supervisión y puesta en servicio."
         />
 
+        <div className="contact-quick-actions mb-8">
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-whatsapp"
+          >
+            <MessageCircle size={20} aria-hidden />
+            <span className="flex flex-col items-start leading-tight">
+              <span>WhatsApp</span>
+              <span className="text-[11px] font-medium text-white/90">{company.office.phoneDisplay}</span>
+            </span>
+          </a>
+          <a href={telOfficeUrl} className="btn-ghost-light">
+            <Phone size={18} aria-hidden />
+            Llamar · Oficina
+          </a>
+          <a href={mailtoOfficeUrl} className="btn-ghost-light">
+            <Mail size={18} aria-hidden />
+            Correo
+          </a>
+        </div>
+
         <div className="mb-10 grid gap-4 sm:grid-cols-2">
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="contact-card"
+            className="contact-card flex min-h-[148px] flex-col"
           >
             <p className="font-mono-accent text-[10px] uppercase tracking-[0.2em] text-white/50">
               {company.office.label}
             </p>
-            <div className="mt-4 space-y-3">
+            <div className="mt-4 flex flex-1 flex-col justify-center space-y-3">
               <a href={telOfficeUrl} className="contact-card-link">
                 <Phone size={18} aria-hidden />
                 <span>
@@ -131,19 +147,13 @@ export function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.06 }}
-            className="contact-card contact-card--highlight"
+            className="contact-card contact-card--highlight flex min-h-[148px] flex-col"
           >
             <p className="font-mono-accent text-[10px] uppercase tracking-[0.2em] text-white/50">
               {company.representative.name}
             </p>
-            <div className="mt-4 space-y-3">
-              <a href={telMobileUrl} className="contact-card-link">
-                <Phone size={18} aria-hidden />
-                <span>
-                  <span className="block text-xs text-white/55">Celular</span>
-                  <span className="font-semibold">{company.representative.phoneDisplay}</span>
-                </span>
-              </a>
+            <p className="mt-1 text-xs text-white/55">{company.representative.title}</p>
+            <div className="mt-4 flex flex-1 flex-col justify-center">
               <a href={mailtoRepresentativeUrl} className="contact-card-link">
                 <Mail size={18} aria-hidden />
                 <span>
@@ -156,23 +166,6 @@ export function Contact() {
         </div>
 
         <div className="mb-8 flex flex-wrap justify-center gap-2.5 sm:gap-3">
-          <a
-            href={whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary bg-[#25D366] text-white hover:bg-[#20bd5a]"
-          >
-            <MessageCircle size={18} aria-hidden />
-            WhatsApp
-          </a>
-          <a href={telOfficeUrl} className="btn-ghost-light">
-            <Phone size={18} aria-hidden />
-            Oficina
-          </a>
-          <a href={telMobileUrl} className="btn-ghost-light">
-            <User size={18} aria-hidden />
-            Ing. Máximo
-          </a>
           <a href={company.mapsUrl} target="_blank" rel="noopener noreferrer" className="btn-ghost-light">
             <MapPin size={18} aria-hidden />
             Ubicación

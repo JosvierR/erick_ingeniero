@@ -1,18 +1,35 @@
 import { motion } from 'framer-motion'
-import { Building2, Handshake, Package } from 'lucide-react'
-import { clients, providers } from '../data/dlci'
-import { partnerAccent, partnerInitials } from '../lib/partners'
+import { Building2, Package } from 'lucide-react'
+import { clients, providers, type Partner } from '../data/dlci'
 import { SectionHeading } from './SectionHeading'
 
-type PartnerListProps = {
-  items: readonly string[]
+type PartnerStripProps = {
+  items: readonly Partner[]
   title: string
   description: string
   icon: typeof Building2
   variant: 'client' | 'provider'
 }
 
-function PartnerList({ items, title, description, icon: Icon, variant }: PartnerListProps) {
+function PartnerLogo({ partner }: { partner: Partner }) {
+  return (
+    <div className="partner-logo-cell" title={partner.name}>
+      {partner.logo ? (
+        <img
+          src={partner.logo}
+          alt={partner.name}
+          loading="lazy"
+          decoding="async"
+          className="partner-logo-img"
+        />
+      ) : (
+        <span className="partner-logo-placeholder">{partner.name}</span>
+      )}
+    </div>
+  )
+}
+
+function PartnerStrip({ items, title, description, icon: Icon, variant }: PartnerStripProps) {
   return (
     <div className="partner-panel">
       <div className="partner-panel-header">
@@ -26,32 +43,17 @@ function PartnerList({ items, title, description, icon: Icon, variant }: Partner
         <span className="partner-count">Destacados</span>
       </div>
 
-      <ul className="mt-5 grid gap-2.5 sm:grid-cols-2">
-        {items.map((name, i) => (
+      <ul className="partner-logo-strip" aria-label={title}>
+        {items.map((partner, i) => (
           <motion.li
-            key={name}
-            initial={{ opacity: 0, y: 10 }}
+            key={partner.name}
+            initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: Math.min(i * 0.03, 0.24) }}
+            transition={{ delay: Math.min(i * 0.04, 0.28) }}
+            className="flex"
           >
-            <div className="partner-card group">
-              <span
-                className="partner-monogram"
-                style={{ background: partnerAccent(name) }}
-                aria-hidden
-              >
-                {partnerInitials(name)}
-              </span>
-              <span className="min-w-0 flex-1">
-                <span className="block text-sm font-semibold leading-snug text-dlci-dark group-hover:text-dlci-blue">
-                  {name}
-                </span>
-                <span className="mt-0.5 block text-[10px] font-medium uppercase tracking-[0.14em] text-dlci-dark/40">
-                  {variant === 'client' ? 'Cliente' : 'Proveedor'}
-                </span>
-              </span>
-            </div>
+            <PartnerLogo partner={partner} />
           </motion.li>
         ))}
       </ul>
@@ -69,31 +71,15 @@ export function Clients() {
           subtitle="Empresas con las que hemos construido relaciones duraderas en obra y en ingeniería eléctrica."
         />
 
-        <div className="mb-8 flex flex-wrap items-center justify-center gap-6 text-center sm:gap-10">
-          <div className="flex items-center gap-2 text-sm text-dlci-dark/60">
-            <Handshake size={18} className="text-dlci-accent" aria-hidden />
-            <span>
-              <strong className="font-semibold text-dlci-blue">Clientes</strong> destacados
-            </span>
-          </div>
-          <div className="hidden h-4 w-px bg-[#E8ECF1] sm:block" aria-hidden />
-          <div className="flex items-center gap-2 text-sm text-dlci-dark/60">
-            <Package size={18} className="text-dlci-accent" aria-hidden />
-            <span>
-              <strong className="font-semibold text-dlci-blue">Proveedores</strong> destacados
-            </span>
-          </div>
-        </div>
-
-        <div className="grid gap-6 lg:grid-cols-2 lg:gap-8">
-          <PartnerList
+        <div className="grid gap-6 lg:grid-cols-2 lg:items-stretch lg:gap-8">
+          <PartnerStrip
             items={clients}
             title="Clientes"
             description="Constructoras e ingenierías con proyectos ejecutados."
             icon={Building2}
             variant="client"
           />
-          <PartnerList
+          <PartnerStrip
             items={providers}
             title="Proveedores"
             description="Suministro confiable de materiales y equipos."
