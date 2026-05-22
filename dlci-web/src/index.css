@@ -121,15 +121,8 @@ body {
   @apply mt-5 inline-flex min-h-[2.75rem] items-center gap-1.5 text-[13px] font-semibold text-dlci-blue;
 }
 
-/* Imágenes compuestas panorámicas: mejor encuadre en tarjetas móviles */
-.project-card .aspect-\[5\/4\] img {
-  object-position: center 42%;
-}
-
-@media (min-width: 40rem) {
-  .project-card .aspect-\[5\/4\] img {
-    object-position: center center;
-  }
+.project-card img {
+  object-position: center 45%;
 }
 
 .service-chip {

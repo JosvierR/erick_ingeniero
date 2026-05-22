@@ -30,7 +30,7 @@ export const company = {
   facebook: contact.facebook,
   vcardPath: '/dlci-contact.vcf',
   /** Incrementar al publicar cambios de imágenes o contenido (rompe caché del navegador). */
-  assetsVersion: '20260522-2',
+  assetsVersion: '20260522-3',
   assets: {
     logo: '/dlci/logo-transparent.png',
     logoLight: '/dlci/logo-light.png',

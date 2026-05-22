@@ -19,7 +19,7 @@ type ProjectGridProps = {
 
 function ProjectGrid({ items, offset = 0, onOpen }: ProjectGridProps) {
   return (
-    <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7">
       {items.map((project, i) => (
         <motion.article
           key={project.id}
@@ -34,15 +34,15 @@ function ProjectGrid({ items, offset = 0, onOpen }: ProjectGridProps) {
             className="project-card group w-full touch-manipulation text-left active:scale-[0.995]"
             aria-label={`Ver proyecto ${project.name}`}
           >
-            <div className="relative aspect-[5/4] overflow-hidden bg-[#e8ecf1]">
+            <div className="relative aspect-[16/10] overflow-hidden bg-[#e8ecf1] sm:aspect-[5/4]">
               <img
                 src={assetUrl(project.image)}
-                alt=""
+                alt={`${project.name} — ${project.location}`}
                 loading="lazy"
                 decoding="async"
                 className="h-full w-full object-cover transition duration-700 ease-out group-hover:scale-[1.04]"
-                width={1080}
-                height={1080}
+                width={1200}
+                height={900}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#252b3d]/90 via-[#252b3d]/20 to-transparent opacity-90 transition group-hover:opacity-95" />
 
