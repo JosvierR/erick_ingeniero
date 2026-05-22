@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import {
   ClipboardCheck,
   Factory,
+  Gauge,
   HardHat,
   Layers,
   Package,
@@ -18,6 +19,7 @@ const iconMap: Record<string, LucideIcon> = {
   factory: Factory,
   'hard-hat': HardHat,
   package: Package,
+  gauge: Gauge,
 }
 
 export function Services() {
@@ -30,7 +32,7 @@ export function Services() {
           subtitle="Del diseño a la puesta en servicio, con cumplimiento normativo y control de calidad."
         />
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="services-grid grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, i) => {
             const Icon = iconMap[service.icon] ?? Zap
             return (

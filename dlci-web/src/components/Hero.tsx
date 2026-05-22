@@ -1,3 +1,4 @@
+import type { CSSProperties } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowDown, ChevronRight, Download, MessageCircle, Phone, Shield } from 'lucide-react'
 import { company, stats } from '../data/dlci'
@@ -10,8 +11,10 @@ export function Hero() {
     <section
       id="inicio"
       className="hero-section relative min-h-[100dvh] overflow-hidden bg-[#1a2236] pt-[4.5rem] text-white"
+      style={
+        { '--hero-bg-image': `url(${company.assets.heroBackground})` } as CSSProperties
+      }
     >
-      {/* Foto de fondo suave */}
       <div className="hero-bg-photo" aria-hidden>
         <img
           src={company.assets.heroBackground}
@@ -103,38 +106,22 @@ export function Hero() {
           transition={{ duration: 0.75, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
           className="relative z-10 hidden sm:block lg:pl-2"
         >
-          <div className="hero-visual-frame">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-[20px] sm:rounded-[22px]">
-              <img
-                src={company.assets.hero}
-                alt="Proyecto eléctrico DLCI Electricidad"
-                className="h-full w-full object-cover"
-                width={1200}
-                height={675}
-                loading="lazy"
-                decoding="async"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1a2236]/85 via-transparent to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6">
-                <p className="font-mono-accent text-[10px] uppercase tracking-[0.2em] text-white/55">
-                  Proyectos reales · República Dominicana
-                </p>
-                <p className="font-display mt-1 text-base font-semibold leading-snug text-white sm:text-lg">
-                  Ingeniería eléctrica con calidad, seguridad y eficiencia
-                </p>
-              </div>
+          <div className="hero-visual">
+            <div className="hero-visual__media" role="img" aria-label="Proyecto eléctrico DLCI Electricidad" />
+            <div className="hero-visual__shade" aria-hidden />
+            <div className="hero-visual__copy">
+              <p className="font-mono-accent text-[10px] uppercase tracking-[0.2em] text-white/60">
+                Proyectos reales · República Dominicana
+              </p>
+              <p className="font-display mt-1 text-base font-semibold leading-snug text-white sm:text-lg">
+                Ingeniería eléctrica con calidad, seguridad y eficiencia
+              </p>
+            </div>
+            <div className="hero-visual__nfc">
+              <p className="text-[10px] font-medium uppercase tracking-wider text-white/50">Tarjeta NFC</p>
+              <p className="font-display text-sm font-semibold text-white">Contacto al instante</p>
             </div>
           </div>
-
-          <motion.div
-            initial={{ opacity: 0, x: -12 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.5 }}
-            className="absolute -bottom-3 -left-1 hidden rounded-2xl border border-white/15 bg-[#1a2236]/75 px-4 py-3 shadow-xl backdrop-blur-md lg:block"
-          >
-            <p className="text-[10px] font-medium uppercase tracking-wider text-white/50">Tarjeta NFC</p>
-            <p className="font-display text-sm font-semibold text-white">Contacto al instante</p>
-          </motion.div>
         </motion.div>
       </div>
 

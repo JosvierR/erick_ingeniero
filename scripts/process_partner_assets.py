@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Logos y fotos de servicios: fondo blanco, sin deformar."""
+"""DEPRECADO: usa scripts/reimport_dlci_assets.py (copia original sin quitar fondos)."""
 from pathlib import Path
 
 try:

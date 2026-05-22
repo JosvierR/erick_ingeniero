@@ -16,14 +16,8 @@ def copy_if_exists(src_name, dest_name):
 # Logo from info PDF page 1
 copy_if_exists("Informaci\u00f3n_General_DLCI__p1_img0.png", "logo-original.png")
 
-# Hero from portafolio
-for name in [
-    "Portafolio_DLCI_Electrici_p2_img1.jpeg",
-    "Portafolio_DLCI_Electrici_p10_img1.jpeg",
-    "Informaci\u00f3n_General_DLCI__p13_img0.jpeg",
-]:
-    if copy_if_exists(name, "hero-project.jpg"):
-        break
+# Hero: collage de obra a pantalla completa; tarjeta = recorte (scripts/prepare_hero_images.py)
+copy_if_exists("Portafolio_DLCI_Electrici_p10_img1.jpeg", "hero-bg.jpg")
 
 # Project images from portafolio pages 4-9 (first large jpeg each page)
 # Orden portafolio (páginas 4–9) según propuesta de diseño

@@ -33,7 +33,8 @@ export const company = {
     logo: '/dlci/logo-transparent.png',
     logoLight: '/dlci/logo-light.png',
     logoOriginal: '/dlci/logo-original.png',
-    hero: '/dlci/hero-project.jpg',
+    hero: '/dlci/hero-card.jpg',
+    heroCard: '/dlci/hero-card.jpg',
     heroBackground: '/dlci/hero-bg.jpg',
     ogImage: '/dlci/hero-project.jpg',
   },
@@ -143,7 +144,19 @@ export const services = [
       'Iluminación técnica',
       'Sistemas de respaldo',
       'Puesta en servicio',
-      'Equipos de monitoreo de calidad de energía',
+    ],
+  },
+  {
+    id: 'medicion',
+    title: 'Análisis especializado y medición de energía eléctrica',
+    description:
+      'Auditoría, monitoreo y optimización del consumo eléctrico en instalaciones comerciales, industriales o residenciales de gran escala, para identificar ineficiencias y reducir el costo de la factura de luz.',
+    icon: 'gauge',
+    image: '/dlci/services/medicion-energia.jpg',
+    scope: [
+      'Medición y registro de parámetros eléctricos',
+      'Análisis de calidad de la energía',
+      'Diagnóstico e informe técnico',
     ],
   },
 ] as const
@@ -159,6 +172,30 @@ export const processSteps = [
 
 export const projects = [
   {
+    id: 'residencial-sorrento',
+    name: 'Residencial Sorrento',
+    location: 'Santiago de los Caballeros, Villa Olga',
+    years: '2019–2022',
+    details: 'Dos edificios de 6 niveles · 24 apartamentos · 118 m² – 136 m²',
+    description: 'Desarrollo residencial con dos torres y sistemas eléctricos integrados.',
+    scope:
+      'Dos edificios de 6 niveles con 24 unidades: planificación eléctrica unificada, aprobaciones y montaje de instalaciones con control de calidad en ambas torres.',
+    services: ['Diseño eléctrico', 'Ejecución', 'Supervisión', 'Instalaciones eléctricas'],
+    image: '/dlci/projects/residencial-sorrento.jpg',
+  },
+  {
+    id: 'torre-biventi-3',
+    name: 'Torre Biventi 3',
+    location: 'Santiago de los Caballeros, Villa Olga',
+    years: '2021–2023',
+    details: '10 niveles · Apartamentos 140 m² – 175 m²',
+    description: 'Complejo residencial con infraestructura eléctrica de alta densidad.',
+    scope:
+      'Diseño y ejecución de sistemas en baja tensión para edificio de 10 niveles, incluyendo canalizaciones, protecciones, iluminación y coordinación con otras disciplinas en obra.',
+    services: ['Diseño eléctrico', 'Ejecución', 'Supervisión', 'Instalaciones eléctricas'],
+    image: '/dlci/projects/torre-biventi-iii.jpg',
+  },
+  {
     id: 'torre-soria',
     name: 'Torre Soria',
     location: 'Santiago de los Caballeros, Villa Olga',
@@ -172,40 +209,16 @@ export const projects = [
     image: '/dlci/projects/torre-soria.jpg',
   },
   {
-    id: 'torre-biventi-iii',
-    name: 'Torre Biventi III',
-    location: 'Santiago de los Caballeros, Villa Olga',
-    years: '2021–2023',
-    details: '10 niveles · Apartamentos 140 m² – 175 m²',
-    description: 'Complejo residencial con infraestructura eléctrica de alta densidad.',
+    id: 'residencial-dj',
+    name: 'Residencial DJ',
+    location: 'Santiago de los Caballeros',
+    years: '2020–2021',
+    details: 'Proyecto residencial',
+    description: 'Desarrollo residencial con soluciones eléctricas integrales DLCI.',
     scope:
-      'Diseño y ejecución de sistemas en baja tensión para edificio de 10 niveles, incluyendo canalizaciones, protecciones, iluminación y coordinación con otras disciplinas en obra.',
+      'Acompañamiento eléctrico completo en desarrollo residencial: desde el diseño y tramitación hasta la ejecución y verificación final de instalaciones.',
     services: ['Diseño eléctrico', 'Ejecución', 'Supervisión', 'Instalaciones eléctricas'],
-    image: '/dlci/projects/torre-biventi-iii.jpg',
-  },
-  {
-    id: 'residencial-sorrento',
-    name: 'Residencial Sorrento',
-    location: 'Santiago de los Caballeros, Villa Olga',
-    years: '2019–2022',
-    details: 'Dos edificios de 6 niveles · 24 apartamentos · 118 m² – 136 m²',
-    description: 'Desarrollo residencial con dos torres y sistemas eléctricos integrados.',
-    scope:
-      'Dos edificios de 6 niveles con 24 unidades: planificación eléctrica unificada, aprobaciones y montaje de instalaciones con control de calidad en ambas torres.',
-    services: ['Diseño eléctrico', 'Ejecución', 'Supervisión', 'Instalaciones eléctricas'],
-    image: '/dlci/projects/residencial-sorrento.jpg',
-  },
-  {
-    id: 'torre-bonsai',
-    name: 'Torre Bonsai',
-    location: 'Santiago de los Caballeros, Cerros de Gurabo III',
-    years: '2019–2021',
-    details: '11 niveles · Un apartamento por nivel · 114 m²',
-    description: 'Torre residencial con instalaciones eléctricas de precisión por nivel.',
-    scope:
-      'Torre de 11 niveles con un apartamento por piso: diseño detallado por nivel, tableros individuales y supervisión técnica durante la ejecución.',
-    services: ['Diseño eléctrico', 'Ejecución', 'Supervisión', 'Instalaciones eléctricas'],
-    image: '/dlci/projects/torre-bonsai.jpg',
+    image: '/dlci/projects/residencial-dj.jpg',
   },
   {
     id: 'torre-murcia',
@@ -220,16 +233,16 @@ export const projects = [
     image: '/dlci/projects/torre-murcia.jpg',
   },
   {
-    id: 'residencial-dj',
-    name: 'Residencial DJ',
-    location: 'Santiago de los Caballeros',
-    years: '2020–2021',
-    details: 'Proyecto residencial',
-    description: 'Desarrollo residencial con soluciones eléctricas integrales DLCI.',
+    id: 'torre-bonsai',
+    name: 'Torre Bonsai',
+    location: 'Santiago de los Caballeros, Cerros de Gurabo III',
+    years: '2019–2021',
+    details: '11 niveles · Un apartamento por nivel · 114 m²',
+    description: 'Torre residencial con instalaciones eléctricas de precisión por nivel.',
     scope:
-      'Acompañamiento eléctrico completo en desarrollo residencial: desde el diseño y tramitación hasta la ejecución y verificación final de instalaciones.',
+      'Torre de 11 niveles con un apartamento por piso: diseño detallado por nivel, tableros individuales y supervisión técnica durante la ejecución.',
     services: ['Diseño eléctrico', 'Ejecución', 'Supervisión', 'Instalaciones eléctricas'],
-    image: '/dlci/projects/residencial-dj.jpg',
+    image: '/dlci/projects/torre-bonsai.jpg',
   },
   {
     id: 'torre-aston',
@@ -311,8 +324,9 @@ export const projects = [
 
 export type Project = (typeof projects)[number]
 
-export const recentProjects = projects.slice(0, 6)
-export const moreProjects = projects.slice(6, 8)
+// Todos los proyectos recientes unificados (incluye los 6 + Torre Aston + Residencial Ethan)
+export const recentProjects = projects.slice(0, 8)
+export const moreProjects: readonly Project[] = []
 export const activeProjects = projects.slice(8)
 
 export type Partner = {
@@ -325,16 +339,26 @@ export const clients: readonly Partner[] = [
   { name: 'Ingeniería Infante Curiel', logo: '/dlci/partners/clients/infante-curiel.png' },
   { name: 'JRI Inversiones', logo: '/dlci/partners/clients/jri-inversiones.png' },
   { name: 'Ingeniería Infante Pichardo', logo: '/dlci/partners/clients/infante-pichardo.png' },
-  { name: 'Constructora Ortefil', logo: '/dlci/partners/clients/ortefil.png' },
-  { name: 'Ingeniería Colizma', logo: '/dlci/partners/clients/colizma.png' },
-  { name: 'Zona Franca Santiago', logo: '/dlci/partners/clients/zona-franca.png' },
+  { name: 'Constructora Ortefil S.R.L.', logo: '/dlci/partners/clients/ortefil.png' },
+  { name: 'Colizma Ingeniería', logo: '/dlci/partners/clients/colizma.png' },
+  { name: 'Corporación Zona Franca Santiago', logo: '/dlci/partners/clients/zonafranca.png' },
+  { name: 'Murcia Group', logo: '/dlci/partners/clients/murcia-group.png' },
+  { name: 'Pak-Label Corp', logo: '/dlci/partners/clients/pak-label.png' },
+  { name: 'Plusval', logo: '/dlci/partners/clients/plusval.png' },
 ]
 
 export const providers: readonly Partner[] = [
-  { name: 'Ferretería 8A', logo: '/dlci/partners/providers/ferreteria-8a.png' },
-  { name: 'Ferretería Bellón', logo: '/dlci/partners/providers/ferreteria-bellon.png' },
+  { name: '8A Ochoa', logo: '/dlci/partners/providers/ochoa-8a.png' },
+  { name: 'Maelec', logo: '/dlci/partners/providers/maelec.png' },
+  { name: 'Montan & Asociados', logo: '/dlci/partners/providers/montan.png' },
+  { name: 'Master Living Technology', logo: '/dlci/partners/providers/master.png' },
+  { name: 'Bellón', logo: '/dlci/partners/providers/bellon.png' },
+  { name: 'ABB', logo: '/dlci/partners/providers/abb.png' },
   { name: 'Ilumeyco', logo: '/dlci/partners/providers/ilumeyco.png' },
-  { name: 'Montan y Asociados', logo: '/dlci/partners/providers/montan.png' },
+  { name: 'Daco', logo: '/dlci/partners/providers/daco.png' },
+  { name: 'Legrand', logo: '/dlci/partners/providers/legrand.png' },
+  { name: 'Bticino', logo: '/dlci/partners/providers/bticino.png' },
+  { name: 'Leviton', logo: '/dlci/partners/providers/leviton.png' },
 ]
 
 export const missionVision = {

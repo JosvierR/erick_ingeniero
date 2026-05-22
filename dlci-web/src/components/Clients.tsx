@@ -40,7 +40,6 @@ function PartnerStrip({ items, title, description, icon: Icon, variant }: Partne
           <h3 className="font-display text-lg font-bold text-dlci-blue">{title}</h3>
           <p className="mt-0.5 text-sm text-dlci-dark/55">{description}</p>
         </div>
-        <span className="partner-count">Destacados</span>
       </div>
 
       <ul className="partner-logo-strip" aria-label={title}>
@@ -81,8 +80,8 @@ export function Clients() {
           />
           <PartnerStrip
             items={providers}
-            title="Proveedores"
-            description="Suministro confiable de materiales y equipos."
+            title="Proveedores y Marcas Aliadas"
+            description="Suministro confiable de materiales y marcas aliadas."
             icon={Package}
             variant="provider"
           />

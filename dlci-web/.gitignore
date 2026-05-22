@@ -11,6 +11,8 @@ node_modules
 dist
 public/dlci/proposal-extract
 public/dlci/info-extract
+public/dlci/_hero_candidates
+public/dlci/pptx-extract
 dist-ssr
 *.local
 
