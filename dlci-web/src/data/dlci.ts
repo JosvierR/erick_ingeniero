@@ -143,6 +143,7 @@ export const services = [
       'Iluminación técnica',
       'Sistemas de respaldo',
       'Puesta en servicio',
+      'Equipos de monitoreo de calidad de energía',
     ],
   },
 ] as const
