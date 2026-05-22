@@ -52,7 +52,7 @@ export function Services() {
                     </span>
                   </div>
                 )}
-                <h3 className="font-display text-[17px] font-bold text-dlci-ink">{service.title}</h3>
+                <h3 className="service-card-title font-display font-bold text-dlci-ink">{service.title}</h3>
                 <p className="mt-2 text-[14px] leading-relaxed text-dlci-dark/68">{service.description}</p>
                 <ul className="mt-5 flex flex-1 flex-col gap-2 border-t border-[#EEF1F5] pt-5">
                   {service.scope.map((item) => (

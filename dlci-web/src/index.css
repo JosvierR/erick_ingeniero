@@ -13,6 +13,7 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -22,6 +23,7 @@ body {
   background: #fff;
   -webkit-font-smoothing: antialiased;
   font-feature-settings: 'kern' 1, 'liga' 1;
+  overflow-x: hidden;
 }
 
 .font-display {
@@ -116,7 +118,18 @@ body {
 }
 
 .project-card-cta {
-  @apply mt-5 inline-flex items-center gap-1.5 text-[13px] font-semibold text-dlci-blue;
+  @apply mt-5 inline-flex min-h-[2.75rem] items-center gap-1.5 text-[13px] font-semibold text-dlci-blue;
+}
+
+/* Imágenes compuestas panorámicas: mejor encuadre en tarjetas móviles */
+.project-card .aspect-\[5\/4\] img {
+  object-position: center 42%;
+}
+
+@media (min-width: 40rem) {
+  .project-card .aspect-\[5\/4\] img {
+    object-position: center center;
+  }
 }
 
 .service-chip {
@@ -133,12 +146,20 @@ body {
 
 /* Partners */
 .partner-panel {
-  @apply rounded-2xl border border-[#E8ECF1] bg-white p-6 sm:p-7;
+  @apply rounded-2xl border border-[#E8ECF1] bg-white p-5 sm:p-7;
   box-shadow: 0 1px 2px rgba(37, 43, 61, 0.04), 0 8px 28px rgba(37, 43, 61, 0.04);
 }
 
 .partner-panel-header {
-  @apply flex items-start gap-4 border-b border-[#EEF1F5] pb-5;
+  @apply flex min-w-0 items-start gap-3 border-b border-[#EEF1F5] pb-5 sm:gap-4;
+}
+
+.partner-panel-header > div {
+  @apply min-w-0 flex-1;
+}
+
+.partner-panel-header h3 {
+  @apply text-base leading-snug text-balance sm:text-lg;
 }
 
 .partner-panel-icon {
@@ -158,20 +179,40 @@ body {
 }
 
 .partner-logo-strip {
-  @apply mt-5 grid grid-cols-2 justify-items-center gap-3 sm:grid-cols-3 sm:gap-4;
+  @apply mt-5 grid grid-cols-2 justify-items-stretch gap-2.5 sm:grid-cols-3 sm:gap-4;
 }
 
-/* Centrar logo suelto cuando la última fila queda con un único elemento */
-.partner-logo-strip > li:last-child:nth-child(3n + 1) {
-  @apply col-span-2 sm:col-span-3 sm:col-start-2 sm:max-w-[9.75rem] sm:justify-self-center;
+.partner-logo-strip > li {
+  @apply flex min-w-0 justify-center;
+}
+
+/* Móvil 2 cols: centrar logo suelto en la última fila (ej. 11 proveedores) */
+.partner-logo-strip > li:last-child:nth-child(2n + 1) {
+  @apply col-span-2 max-w-[10.5rem] justify-self-center sm:col-span-1 sm:max-w-none;
+}
+
+/* Tablet/desktop 3 cols: centrar logo suelto (ej. 10 clientes) */
+@media (min-width: 40rem) {
+  .partner-logo-strip > li:last-child:nth-child(2n + 1) {
+    grid-column: span 1;
+    max-width: none;
+    justify-self: stretch;
+  }
+
+  .partner-logo-strip > li:last-child:nth-child(3n + 1) {
+    grid-column: span 3;
+    grid-column-start: 2;
+    max-width: 9.75rem;
+    justify-self: center;
+  }
 }
 
 .partner-logo-cell {
-  @apply flex h-[5.25rem] w-[9.75rem] shrink-0 items-center justify-center rounded-xl border border-[#EEF1F5] bg-white p-2;
+  @apply flex h-[4.75rem] w-full max-w-[9.75rem] items-center justify-center rounded-xl border border-[#EEF1F5] bg-white p-2 sm:h-[5.25rem];
 }
 
 .partner-logo-img {
-  @apply h-auto w-auto max-h-[3.75rem] max-w-[8.75rem] object-contain object-center;
+  @apply h-auto w-auto max-h-[3.25rem] max-w-full object-contain object-center sm:max-h-[3.75rem] sm:max-w-[8.75rem];
 }
 
 .partner-logo-placeholder {
@@ -331,7 +372,7 @@ body {
 
 /* Service card */
 .service-card {
-  @apply flex h-full flex-col overflow-hidden rounded-2xl border border-[#E8ECF1] bg-white p-6;
+  @apply flex h-full flex-col overflow-hidden rounded-2xl border border-[#E8ECF1] bg-white p-5 sm:p-6;
   box-shadow: 0 1px 2px rgba(37, 43, 61, 0.04);
 }
 
@@ -339,12 +380,27 @@ body {
   box-shadow: 0 8px 28px rgba(37, 43, 61, 0.07);
 }
 
-.services-grid > :last-child:nth-child(3n + 1) {
-  @apply lg:col-start-2;
+.service-card-title {
+  @apply text-[16px] leading-snug text-balance sm:text-[17px];
+}
+
+/* 7 servicios: centrar el último cuando queda solo en la fila */
+@media (min-width: 48rem) and (max-width: 63.9375rem) {
+  .services-grid > :last-child:nth-child(2n + 1) {
+    grid-column: span 2;
+    max-width: 28rem;
+    justify-self: center;
+  }
+}
+
+@media (min-width: 64rem) {
+  .services-grid > :last-child:nth-child(3n + 1) {
+    grid-column-start: 2;
+  }
 }
 
 .service-card-media {
-  @apply relative -mx-6 -mt-6 mb-5 aspect-[16/10] overflow-hidden border-b border-[#EEF1F5] bg-white;
+  @apply relative -mx-5 -mt-5 mb-4 aspect-[16/10] overflow-hidden border-b border-[#EEF1F5] bg-white sm:-mx-6 sm:-mt-6 sm:mb-5;
 }
 
 .service-card-media img {

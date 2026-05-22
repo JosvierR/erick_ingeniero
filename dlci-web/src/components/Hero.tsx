@@ -10,7 +10,7 @@ export function Hero() {
   return (
     <section
       id="inicio"
-      className="hero-section relative min-h-[100dvh] overflow-hidden bg-[#1a2236] pt-[4.5rem] text-white"
+      className="hero-section relative min-h-[100dvh] overflow-hidden bg-[#1a2236] pt-[max(4.5rem,env(safe-area-inset-top))] text-white"
       style={
         { '--hero-bg-image': `url(${company.assets.heroBackground})` } as CSSProperties
       }
@@ -28,7 +28,7 @@ export function Hero() {
       <div className="hero-bg-overlay pointer-events-none absolute inset-0" aria-hidden />
       <div className="hero-grid pointer-events-none absolute inset-0" aria-hidden />
 
-      <div className="relative mx-auto grid max-w-6xl gap-10 px-4 pb-32 pt-6 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-12 lg:px-8 lg:pb-28 lg:pt-10">
+      <div className="relative mx-auto grid max-w-6xl gap-10 px-4 pb-[calc(7.5rem+env(safe-area-inset-bottom,0px))] pt-6 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-12 lg:px-8 lg:pb-28 lg:pt-10">
         <motion.div
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}

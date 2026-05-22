@@ -54,6 +54,11 @@ export function ProjectModal({ project, onClose }: Props) {
             exit={{ y: '100%', opacity: 0.9 }}
             transition={{ type: 'spring', damping: 32, stiffness: 340 }}
           >
+            <div
+              className="mx-auto mt-2 mb-1 h-1 w-10 shrink-0 rounded-full bg-dlci-dark/15 sm:hidden"
+              aria-hidden
+            />
+
             <div className="relative aspect-[16/10] shrink-0 overflow-hidden bg-dlci-bg sm:aspect-[16/9]">
               <img
                 src={project.image}

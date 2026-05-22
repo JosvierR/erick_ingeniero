@@ -15,7 +15,7 @@ export function SectionHeading({ eyebrow, title, subtitle, light, center = true 
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-60px' }}
       transition={{ duration: 0.45 }}
-      className={`mb-12 md:mb-14 ${center ? 'mx-auto max-w-3xl text-center' : 'max-w-2xl'}`}
+      className={`mb-10 sm:mb-12 md:mb-14 ${center ? 'mx-auto max-w-3xl text-center' : 'max-w-2xl'}`}
     >
       {eyebrow && (
         <p

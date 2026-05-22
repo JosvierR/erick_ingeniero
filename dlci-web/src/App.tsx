@@ -20,7 +20,7 @@ function App() {
       <JsonLd />
       <SeoHead />
       <Navbar />
-      <main className="pb-20 md:pb-0">
+      <main className="pb-[calc(5rem+env(safe-area-inset-bottom,0px))] md:pb-0">
         <Hero />
         <QuickActions />
         <About />

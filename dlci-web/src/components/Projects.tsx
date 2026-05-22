@@ -30,7 +30,7 @@ function ProjectGrid({ items, offset = 0, onOpen }: ProjectGridProps) {
           <button
             type="button"
             onClick={() => onOpen(project)}
-            className="project-card group w-full text-left"
+            className="project-card group w-full touch-manipulation text-left active:scale-[0.995]"
             aria-label={`Ver proyecto ${project.name}`}
           >
             <div className="relative aspect-[5/4] overflow-hidden bg-[#e8ecf1]">

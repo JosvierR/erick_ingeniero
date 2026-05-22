@@ -14,6 +14,15 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  useEffect(() => {
+    if (!open) return
+    const prev = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.body.style.overflow = prev
+    }
+  }, [open])
+
   const onHero = !scrolled
 
   return (
@@ -48,7 +57,7 @@ export function Navbar() {
 
         <button
           type="button"
-          className={`inline-flex rounded-lg p-2 md:hidden ${onHero ? 'text-white' : 'text-dlci-blue'}`}
+          className={`inline-flex min-h-[2.75rem] min-w-[2.75rem] items-center justify-center rounded-lg md:hidden ${onHero ? 'text-white' : 'text-dlci-blue'}`}
           aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
           aria-expanded={open}
           onClick={() => setOpen(!open)}

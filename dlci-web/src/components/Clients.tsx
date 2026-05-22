@@ -37,7 +37,7 @@ function PartnerStrip({ items, title, description, icon: Icon, variant }: Partne
           <Icon size={20} aria-hidden />
         </span>
         <div>
-          <h3 className="font-display text-lg font-bold text-dlci-blue">{title}</h3>
+          <h3 className="font-display font-bold text-dlci-blue">{title}</h3>
           <p className="mt-0.5 text-sm text-dlci-dark/55">{description}</p>
         </div>
       </div>
