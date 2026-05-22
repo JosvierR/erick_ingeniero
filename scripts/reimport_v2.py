@@ -79,16 +79,16 @@ def export_projects() -> None:
     save_jpg(crop_box(img15, dpi, 955, 255, 1350, 465), PROJ / "torre-aston.jpg")
     save_jpg(crop_box(img15, dpi, 955, 495, 1350, 695), PROJ / "residencial-ethan.jpg")
 
-    # p16: Soria, Biventi 3, Sorrento (top → bottom)
+    # p16: Soria, Biventi 3, Murcia (top → bottom)
     img16, dpi = render_page(NEW_PDF, 16)
     save_jpg(crop_box(img16, dpi, 951, 100, 1380, 280), PROJ / "torre-soria.jpg")
     save_jpg(crop_box(img16, dpi, 951, 340, 1380, 535), PROJ / "torre-biventi-iii.jpg")
-    save_jpg(crop_box(img16, dpi, 951, 580, 1380, 800), PROJ / "residencial-sorrento.jpg")
+    save_jpg(crop_box(img16, dpi, 951, 580, 1380, 800), PROJ / "torre-murcia.jpg")
 
-    # p17: Bonsai, Murcia, DJ (top → bottom)
+    # p17: Sorrento, Bonsai, DJ (top → bottom)
     img17, dpi = render_page(NEW_PDF, 17)
-    save_jpg(crop_box(img17, dpi, 951, 100, 1380, 340), PROJ / "torre-bonsai.jpg")
-    save_jpg(crop_box(img17, dpi, 951, 340, 1380, 555), PROJ / "torre-murcia.jpg")
+    save_jpg(crop_box(img17, dpi, 951, 100, 1380, 340), PROJ / "residencial-sorrento.jpg")
+    save_jpg(crop_box(img17, dpi, 951, 340, 1380, 555), PROJ / "torre-bonsai.jpg")
     save_jpg(crop_box(img17, dpi, 951, 580, 1380, 795), PROJ / "residencial-dj.jpg")
 
     # p18: 2x2 grid: Asturias | Aitana, Montpellier | Porto Bello

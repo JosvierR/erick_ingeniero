@@ -10,16 +10,30 @@
   NODE_VERSION = "22"
   NPM_FLAGS = "--legacy-peer-deps=false"
 
-# Cabeceras: caché para assets estáticos
+# HTML siempre fresco (SPA + actualizaciones de contenido)
+[[headers]]
+  for = "/"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+    Pragma = "no-cache"
+
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+    Pragma = "no-cache"
+
+# JS/CSS con hash de Vite — caché larga e inmutable
 [[headers]]
   for = "/assets/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
+# Imágenes /dlci: revalidar siempre (las URLs llevan ?v= en la app)
 [[headers]]
   for = "/dlci/*"
   [headers.values]
-    Cache-Control = "public, max-age=604800"
+    Cache-Control = "no-cache, must-revalidate"
 
 [[headers]]
   for = "/*.vcf"

@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { ArrowRight, Calendar, MapPin, X } from 'lucide-react'
-import type { Project } from '../data/dlci'
+import { assetUrl, type Project } from '../data/dlci'
 import { whatsappUrl } from '../lib/links'
 
 type Props = {
@@ -61,7 +61,7 @@ export function ProjectModal({ project, onClose }: Props) {
 
             <div className="relative aspect-[16/10] shrink-0 overflow-hidden bg-dlci-bg sm:aspect-[16/9]">
               <img
-                src={project.image}
+                src={assetUrl(project.image)}
                 alt={project.name}
                 className="h-full w-full object-cover"
                 width={1200}

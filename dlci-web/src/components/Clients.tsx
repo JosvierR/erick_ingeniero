@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Building2, Package } from 'lucide-react'
-import { clients, providers, type Partner } from '../data/dlci'
+import { assetUrl, clients, providers, type Partner } from '../data/dlci'
 import { SectionHeading } from './SectionHeading'
 
 type PartnerStripProps = {
@@ -16,7 +16,7 @@ function PartnerLogo({ partner }: { partner: Partner }) {
     <div className="partner-logo-cell" title={partner.name}>
       {partner.logo ? (
         <img
-          src={partner.logo}
+          src={assetUrl(partner.logo)}
           alt={partner.name}
           loading="lazy"
           decoding="async"

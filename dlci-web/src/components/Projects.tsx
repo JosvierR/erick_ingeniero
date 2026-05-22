@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { ArrowUpRight, MapPin } from 'lucide-react'
 import {
   activeProjects,
+  assetUrl,
   moreProjects,
   recentProjects,
   type Project,
@@ -35,7 +36,7 @@ function ProjectGrid({ items, offset = 0, onOpen }: ProjectGridProps) {
           >
             <div className="relative aspect-[5/4] overflow-hidden bg-[#e8ecf1]">
               <img
-                src={project.image}
+                src={assetUrl(project.image)}
                 alt=""
                 loading="lazy"
                 decoding="async"

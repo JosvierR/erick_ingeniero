@@ -29,6 +29,8 @@ export const company = {
   instagram: contact.instagram,
   facebook: contact.facebook,
   vcardPath: '/dlci-contact.vcf',
+  /** Incrementar al publicar cambios de imágenes o contenido (rompe caché del navegador). */
+  assetsVersion: '20260522-2',
   assets: {
     logo: '/dlci/logo-transparent.png',
     logoLight: '/dlci/logo-light.png',
@@ -40,10 +42,18 @@ export const company = {
   },
 } as const
 
+/** Añade versión a rutas /dlci/ para evitar imágenes antiguas en caché. */
+export function assetUrl(path: string) {
+  if (!path.startsWith('/')) return path
+  const sep = path.includes('?') ? '&' : '?'
+  return `${path}${sep}v=${company.assetsVersion}`
+}
+
 /** Imagen OG absoluta cuando VITE_SITE_URL está configurada en Netlify */
 export function absoluteAsset(path: string) {
-  if (!siteUrl) return path
-  return `${siteUrl}${path.startsWith('/') ? path : `/${path}`}`
+  const versioned = assetUrl(path)
+  if (!siteUrl) return versioned
+  return `${siteUrl}${versioned.startsWith('/') ? versioned : `/${versioned}`}`
 }
 
 export const aboutText =

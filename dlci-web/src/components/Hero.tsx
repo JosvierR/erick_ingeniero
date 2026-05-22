@@ -1,7 +1,7 @@
 import type { CSSProperties } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowDown, ChevronRight, Download, MessageCircle, Phone, Shield } from 'lucide-react'
-import { company, stats } from '../data/dlci'
+import { assetUrl, company, stats } from '../data/dlci'
 import { telUrl, whatsappUrl } from '../lib/links'
 
 const heroStats = stats.slice(0, 3)
@@ -12,12 +12,12 @@ export function Hero() {
       id="inicio"
       className="hero-section relative min-h-[100dvh] overflow-hidden bg-[#1a2236] pt-[max(4.5rem,env(safe-area-inset-top))] text-white"
       style={
-        { '--hero-bg-image': `url(${company.assets.heroBackground})` } as CSSProperties
+        { '--hero-bg-image': `url(${assetUrl(company.assets.heroBackground)})` } as CSSProperties
       }
     >
       <div className="hero-bg-photo" aria-hidden>
         <img
-          src={company.assets.heroBackground}
+          src={assetUrl(company.assets.heroBackground)}
           alt=""
           className="hero-bg-photo__img"
           width={1920}

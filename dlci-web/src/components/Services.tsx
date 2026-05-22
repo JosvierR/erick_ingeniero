@@ -9,7 +9,7 @@ import {
   Zap,
   type LucideIcon,
 } from 'lucide-react'
-import { services } from '../data/dlci'
+import { assetUrl, services } from '../data/dlci'
 import { SectionHeading } from './SectionHeading'
 
 const iconMap: Record<string, LucideIcon> = {
@@ -46,7 +46,7 @@ export function Services() {
               >
                 {'image' in service && service.image && (
                   <div className="service-card-media">
-                    <img src={service.image} alt="" loading="lazy" decoding="async" />
+                    <img src={assetUrl(service.image)} alt="" loading="lazy" decoding="async" />
                     <span className="service-card-media-icon" aria-hidden>
                       <Icon size={18} />
                     </span>
