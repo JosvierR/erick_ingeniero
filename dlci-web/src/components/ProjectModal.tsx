@@ -63,7 +63,7 @@ export function ProjectModal({ project, onClose }: Props) {
               <img
                 src={assetUrl(project.image)}
                 alt={project.name}
-                className="h-full w-full object-cover object-[center_45%]"
+                className="h-full w-full object-cover object-center"
                 width={1200}
                 height={675}
               />

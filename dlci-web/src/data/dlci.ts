@@ -30,7 +30,7 @@ export const company = {
   facebook: contact.facebook,
   vcardPath: '/dlci-contact.vcf',
   /** Incrementar al publicar cambios de imágenes o contenido (rompe caché del navegador). */
-  assetsVersion: '20260522-3',
+  assetsVersion: '20260522-4',
   assets: {
     logo: '/dlci/logo-transparent.png',
     logoLight: '/dlci/logo-light.png',
@@ -182,16 +182,17 @@ export const processSteps = [
 
 export const projects = [
   {
-    id: 'residencial-sorrento',
-    name: 'Residencial Sorrento',
+    id: 'torre-soria',
+    name: 'Torre Soria',
     location: 'Santiago de los Caballeros, Villa Olga',
-    years: '2019–2022',
-    details: 'Dos edificios de 6 niveles · 24 apartamentos · 118 m² – 136 m²',
-    description: 'Desarrollo residencial con dos torres y sistemas eléctricos integrados.',
+    years: '2021–2023',
+    details: '14 niveles · Apartamentos 132 m² – 200 m²',
+    description:
+      'Proyecto residencial de gran escala con diseño e instalaciones eléctricas completas.',
     scope:
-      'Dos edificios de 6 niveles con 24 unidades: planificación eléctrica unificada, aprobaciones y montaje de instalaciones con control de calidad en ambas torres.',
+      'Ingeniería eléctrica integral para torre de 14 niveles: dimensionamiento de cargas, tableros por zona, iluminación de áreas comunes y apartamentos, más supervisión en obra hasta la puesta en servicio.',
     services: ['Diseño eléctrico', 'Ejecución', 'Supervisión', 'Instalaciones eléctricas'],
-    image: '/dlci/projects/residencial-sorrento.jpg',
+    image: '/dlci/projects/torre-soria.jpg',
   },
   {
     id: 'torre-biventi-3',
@@ -206,29 +207,28 @@ export const projects = [
     image: '/dlci/projects/torre-biventi-iii.jpg',
   },
   {
-    id: 'torre-soria',
-    name: 'Torre Soria',
+    id: 'residencial-sorrento',
+    name: 'Residencial Sorrento',
     location: 'Santiago de los Caballeros, Villa Olga',
-    years: '2021–2023',
-    details: '14 niveles · Apartamentos 132 m² – 200 m²',
-    description:
-      'Proyecto residencial de gran escala con diseño e instalaciones eléctricas completas.',
+    years: '2019–2022',
+    details: 'Dos edificios de 6 niveles · 24 apartamentos · 118 m² – 136 m²',
+    description: 'Desarrollo residencial con dos torres y sistemas eléctricos integrados.',
     scope:
-      'Ingeniería eléctrica integral para torre de 14 niveles: dimensionamiento de cargas, tableros por zona, iluminación de áreas comunes y apartamentos, más supervisión en obra hasta la puesta en servicio.',
+      'Dos edificios de 6 niveles con 24 unidades: planificación eléctrica unificada, aprobaciones y montaje de instalaciones con control de calidad en ambas torres.',
     services: ['Diseño eléctrico', 'Ejecución', 'Supervisión', 'Instalaciones eléctricas'],
-    image: '/dlci/projects/torre-soria.jpg',
+    image: '/dlci/projects/residencial-sorrento.jpg',
   },
   {
-    id: 'residencial-dj',
-    name: 'Residencial DJ',
-    location: 'Santiago de los Caballeros',
-    years: '2020–2021',
-    details: 'Proyecto residencial',
-    description: 'Desarrollo residencial con soluciones eléctricas integrales DLCI.',
+    id: 'torre-bonsai',
+    name: 'Torre Bonsai',
+    location: 'Santiago de los Caballeros, Cerros de Gurabo III',
+    years: '2019–2021',
+    details: '11 niveles · Un apartamento por nivel · 114 m²',
+    description: 'Torre residencial con instalaciones eléctricas de precisión por nivel.',
     scope:
-      'Acompañamiento eléctrico completo en desarrollo residencial: desde el diseño y tramitación hasta la ejecución y verificación final de instalaciones.',
+      'Torre de 11 niveles con un apartamento por piso: diseño detallado por nivel, tableros individuales y supervisión técnica durante la ejecución.',
     services: ['Diseño eléctrico', 'Ejecución', 'Supervisión', 'Instalaciones eléctricas'],
-    image: '/dlci/projects/residencial-dj.jpg',
+    image: '/dlci/projects/torre-bonsai.jpg',
   },
   {
     id: 'torre-murcia',
@@ -243,16 +243,16 @@ export const projects = [
     image: '/dlci/projects/torre-murcia.jpg',
   },
   {
-    id: 'torre-bonsai',
-    name: 'Torre Bonsai',
-    location: 'Santiago de los Caballeros, Cerros de Gurabo III',
-    years: '2019–2021',
-    details: '11 niveles · Un apartamento por nivel · 114 m²',
-    description: 'Torre residencial con instalaciones eléctricas de precisión por nivel.',
+    id: 'dj-residences',
+    name: 'DJ Residences',
+    location: 'Santiago de los Caballeros',
+    years: '2020–2021',
+    details: 'Proyecto residencial',
+    description: 'Desarrollo residencial con soluciones eléctricas integrales DLCI.',
     scope:
-      'Torre de 11 niveles con un apartamento por piso: diseño detallado por nivel, tableros individuales y supervisión técnica durante la ejecución.',
+      'Acompañamiento eléctrico completo en desarrollo residencial: desde el diseño y tramitación hasta la ejecución y verificación final de instalaciones.',
     services: ['Diseño eléctrico', 'Ejecución', 'Supervisión', 'Instalaciones eléctricas'],
-    image: '/dlci/projects/torre-bonsai.jpg',
+    image: '/dlci/projects/residencial-dj.jpg',
   },
   {
     id: 'torre-aston',

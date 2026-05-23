@@ -121,8 +121,9 @@ body {
   @apply mt-5 inline-flex min-h-[2.75rem] items-center gap-1.5 text-[13px] font-semibold text-dlci-blue;
 }
 
+/* Composites panorámicos (papel roto): centrar el collage completo */
 .project-card img {
-  object-position: center 45%;
+  object-position: center center;
 }
 
 .service-chip {

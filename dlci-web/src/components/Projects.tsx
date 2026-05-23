@@ -34,7 +34,7 @@ function ProjectGrid({ items, offset = 0, onOpen }: ProjectGridProps) {
             className="project-card group w-full touch-manipulation text-left active:scale-[0.995]"
             aria-label={`Ver proyecto ${project.name}`}
           >
-            <div className="relative aspect-[16/10] overflow-hidden bg-[#e8ecf1] sm:aspect-[5/4]">
+            <div className="relative aspect-[16/9] overflow-hidden bg-[#e8ecf1]">
               <img
                 src={assetUrl(project.image)}
                 alt={`${project.name} — ${project.location}`}
